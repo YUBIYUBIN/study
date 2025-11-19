@@ -1,0 +1,12 @@
+body {
+  background-color: rgb(31, 31, 31);
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: rgb(232, 232, 232);
+}
+
+nav {
+  padding: 6px;
+  display: flex;
+  justify-content: space-between;
+}
