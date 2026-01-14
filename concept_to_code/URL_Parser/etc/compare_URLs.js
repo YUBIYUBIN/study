@@ -1,8 +1,8 @@
-const { UrlParser } = require("./URL_parser");
+const { UrlParser } = require("../core/URL_parser");
 
 const areURLsEqual = (url1, url2) => {
-  const baseURL = new UrlParser(url1).URL;
-  const otherURL = new UrlParser(url2).URL;
+  const baseURL = new UrlParser(url1).parsedURL;
+  const otherURL = new UrlParser(url2).parsedURL;
   //scheme 동일
   if (baseURL.scheme === otherURL.scheme) {
     //scheme,  host:port 동일

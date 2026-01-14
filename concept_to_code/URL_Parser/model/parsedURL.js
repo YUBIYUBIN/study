@@ -1,6 +1,4 @@
-const { areURLsEqual } = require("./compare_URLs");
-
-class URL {
+class ParsedURL {
   #pathComponents;
   constructor() {
     this.absoluteStr = "";
@@ -12,10 +10,6 @@ class URL {
     this.#pathComponents = ["/"];
     this.lastPathComponent = "";
     this.query = "";
-  }
-  isEqual(urlStr) {
-    return true;
-    // areURLsEqual(this.absoluteStr, urlStr);
   }
 
   setPathComponents(components) {
@@ -94,4 +88,4 @@ query: ${this.query}
   }
 }
 
-module.exports = { URL };
+module.exports = { ParsedURL };
