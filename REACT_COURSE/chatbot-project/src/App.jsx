@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ChatInput } from "./components/ChatInput";
 import ChatMessages from "./components/ChatMessages";
 import "./App.css";
+import { Chatbot } from "supersimpledev";
 
 function App() {
   const [chatMessages, setChatMessages] = useState([
@@ -10,6 +11,10 @@ function App() {
     // { message: "get me date", sender: "user", id: "id3" },
     // { message: "Today is January 22", sender: "robot", id: "id4" },
   ]);
+  useEffect(() => {
+    Chatbot.addResponses({ goodbye: "Have a nice day, Yubin ;)" });
+  }, []);
+
   return (
     <div className="app-container">
       <p className="welcomeMessage">
