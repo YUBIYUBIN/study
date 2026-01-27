@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Chatbot } from "supersimpledev";
 import LoadingImage from "../assets/loading-spinner.gif";
 import "./ChatInput.css";
+import dayjs from "dayjs";
 
 export function ChatInput({ setChatMessages, chatMessages }) {
   //useState(초기상태)
@@ -22,7 +23,12 @@ export function ChatInput({ setChatMessages, chatMessages }) {
 
     const newChatMessages = [
       ...chatMessages,
-      { message: inputText, sender: "user", id: crypto.randomUUID() },
+      {
+        message: inputText,
+        sender: "user",
+        id: crypto.randomUUID(),
+        time: dayjs().valueOf(),
+      },
     ];
 
     setChatMessages([
@@ -31,6 +37,7 @@ export function ChatInput({ setChatMessages, chatMessages }) {
         message: <img className="loadingImg" src={LoadingImage} />,
         sender: "robot",
         id: crypto.randomUUID(),
+        time: dayjs().valueOf(),
       },
     ]);
 
